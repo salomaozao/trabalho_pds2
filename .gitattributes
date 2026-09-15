@@ -1,0 +1,12 @@
+# Normaliza as quebras de linha para LF dentro do repositorio.
+# Sem isso, integrantes em Windows e em Linux gerariam diffs de arquivo inteiro
+# a cada commit, poluindo a contagem de linhas usada na nota de participacao.
+* text=auto eol=lf
+
+# O Makefile e os scripts precisam de LF para funcionar.
+Makefile   text eol=lf
+*.sh       text eol=lf
+
+# Arquivos binarios nao devem ser convertidos.
+*.pdf      binary
+*.png      binary

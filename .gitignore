@@ -1,0 +1,34 @@
+# Binarios e objetos
+build/*
+!build/.gitkeep
+*.o
+*.obj
+*.exe
+*.out
+*.a
+
+# Cobertura (gcov / gcovr)
+*.gcno
+*.gcda
+*.gcov
+coverage/
+cobertura.xml
+
+# Documentacao gerada pelo Doxygen
+docs/html/
+docs/latex/
+
+# Saves gerados durante a execucao do jogo
+data/saves/*
+!data/saves/.gitkeep
+
+# Editores e sistema operacional
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.DS_Store
+
+# Notas locais
+CLAUDE.md
+.claude/
