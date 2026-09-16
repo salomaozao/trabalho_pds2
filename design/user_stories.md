@@ -107,3 +107,4 @@ Critérios de aceitação:
 - Toda rolagem passa por uma interface `Dado`, injetada nas classes que precisam dela.
 - Existe uma implementação de dado com resultado fixo para os testes.
 - O jogo inteiro pode ser dirigido por um fluxo de entrada em memória, sem terminal.
+- 
