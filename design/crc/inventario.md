@@ -10,3 +10,4 @@ Coleção de itens de capacidade limitada, pertencente ao herói.
 | Informar se contém um item e contar itens por tipo | |
 | Expor a lista de itens para relatórios e saves | |
 | Esvaziar-se | |
+
