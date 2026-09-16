@@ -12,11 +12,11 @@ o sistema).
 uma partida com um personagem que combine com meu estilo.
 
 Critérios de aceitação:
-- O jogo oferece as classes Guerreiro, Mago e Arqueiro, cada uma com vida, mana e
-  atributos iniciais diferentes.
-- O nome não pode ser vazio; se for, o jogo avisa e pede de novo.
-- O herói começa no nível 1 com um pouco de ouro e uma poção de vida.
-- Após a criação, a ficha do herói pode ser consultada a qualquer momento.
+- O jogador pode escolher entre as classes Guerreiro, Mago e Arqueiro.
+- O jogo recusa a criação se o nome do herói estiver vazio.
+- O herói criado começa no nível 1, com vida, mana e atributos iniciais definidos
+  pela classe escolhida.
+- Após a criação, o herói fica disponível para entrar em combate ou acessar a loja.
 
 ## US02 — Lutar contra monstros
 
