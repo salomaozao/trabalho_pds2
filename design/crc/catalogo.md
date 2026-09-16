@@ -11,3 +11,4 @@ Coleções compartilhadas dos arquivos em`dados/`na.
 |Listar todos os itens ou filtrar por tipo| `Jogo` |
 |Listar monstros até um nível máximo| `Monstro` |
 |Sortear um monstro compatível com o nível do herói, com fallback para os mais fracos| `Monstro` |
+
