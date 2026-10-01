@@ -1,0 +1,23 @@
+# Catalogo de itens da loja.
+# ARMA;Nome;Preco;BonusAtaque
+# ARMADURA;Nome;Preco;BonusDefesa
+# POCAO;Nome;Preco;VIDA|MANA;Quantidade
+
+ARMA;Adaga Enferrujada;20;2
+ARMA;Espada Curta;60;4
+ARMA;Espada Longa;120;8
+ARMA;Machado de Batalha;200;12
+ARMA;Cajado de Carvalho;70;5
+ARMA;Cajado Arcano;160;10
+ARMA;Arco de Cacador;65;4
+ARMA;Arco Elfico;150;9
+
+ARMADURA;Tunica de Pano;25;1
+ARMADURA;Armadura de Couro;60;3
+ARMADURA;Cota de Malha;150;5
+ARMADURA;Armadura de Placas;320;8
+
+POCAO;Pocao de Vida Pequena;25;VIDA;30
+POCAO;Pocao de Vida Grande;60;VIDA;80
+POCAO;Pocao de Mana Pequena;25;MANA;20
+POCAO;Pocao de Mana Grande;60;MANA;50
