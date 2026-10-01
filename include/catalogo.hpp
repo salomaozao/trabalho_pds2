@@ -11,7 +11,7 @@
 
 /**
  * @file catalogo.hpp
- * @brief Catalogos de itens e monstros carregados dos arquivos em data/.
+ * @brief Catalogos de itens e monstros carregados dos arquivos de data/.
  *
  * Linhas vazias e linhas iniciadas por '#' sao ignoradas. Uma linha
  * malformada interrompe a carga com ArquivoInvalido indicando o numero
@@ -24,12 +24,19 @@ class Dado;
 
 class CatalogoItens {
 public:
-    /** @throws ArquivoInvalido se o arquivo nao abrir ou tiver linha invalida. */
+    /**
+     * @brief Carrega os itens a partir de um arquivo.
+     * @throws ArquivoInvalido se o arquivo nao abrir ou tiver linha invalida.
+     */
     void carregarArquivo(const std::string& caminho);
 
-    /** @throws ArquivoInvalido se alguma linha for invalida. */
+    /**
+     * @brief Carrega os itens a partir de um fluxo de entrada ja aberto.
+     * @throws ArquivoInvalido se alguma linha for invalida.
+     */
     void carregar(std::istream& entrada, const std::string& origem);
 
+    /** @brief Adiciona um item ao catalogo. */
     void adicionar(std::shared_ptr<Item> item);
 
     /**
@@ -38,19 +45,34 @@ public:
      */
     std::shared_ptr<Item> criar(const std::string& nome) const;
 
+    /** @brief Indica se existe algum item com esse nome no catalogo. */
     bool contem(const std::string& nome) const;
+    /** @brief Quantidade de itens cadastrados no catalogo. */
     std::size_t tamanho() const;
-    const std::vector<std::shared_ptr<Item> >& itens() const;
-    std::vector<std::shared_ptr<Item> > porTipo(TipoItem tipo) const;
+    /** @brief Lista de todos os itens do catalogo. */
+    const std::vector<std::shared_ptr<Item>>& itens() const;
+    /** @brief Lista os itens do catalogo filtrados por tipo. */
+    std::vector<std::shared_ptr<Item>> porTipo(TipoItem tipo) const;
 
 private:
-    std::vector<std::shared_ptr<Item> > itens_;
+    std::vector<std::shared_ptr<Item>> itens_;
 };
 
 class CatalogoMonstros {
 public:
+    /**
+     * @brief Carrega os monstros a partir de um arquivo.
+     * @throws ArquivoInvalido se o arquivo nao abrir ou tiver linha invalida.
+     */
     void carregarArquivo(const std::string& caminho);
+
+    /**
+     * @brief Carrega os monstros a partir de um fluxo de entrada ja aberto.
+     * @throws ArquivoInvalido se alguma linha for invalida.
+     */
     void carregar(std::istream& entrada, const std::string& origem);
+
+    /** @brief Adiciona um monstro ao catalogo. */
     void adicionar(const Monstro& monstro);
 
     /**
@@ -59,9 +81,13 @@ public:
      */
     Monstro criar(const std::string& nome) const;
 
+    /** @brief Indica se existe algum monstro com esse nome no catalogo. */
     bool contem(const std::string& nome) const;
+    /** @brief Quantidade de monstros cadastrados no catalogo. */
     std::size_t tamanho() const;
+    /** @brief Lista de todos os monstros do catalogo. */
     const std::vector<Monstro>& todos() const;
+    /** @brief Lista os monstros com nivel ate o maximo informado. */
     std::vector<Monstro> ateNivel(int nivelMaximo) const;
 
     /**
@@ -76,6 +102,6 @@ private:
     std::vector<Monstro> monstros_;
 };
 
-}  // namespace rpg
+} // namespace rpg
 
-#endif  // RPG_CATALOGO_HPP
+#endif // RPG_CATALOGO_HPP
