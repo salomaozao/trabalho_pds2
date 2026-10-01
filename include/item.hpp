@@ -21,6 +21,7 @@ class Personagem;
 
 enum class TipoItem { ARMA, ARMADURA, POCAO };
 
+/** @brief Nome legivel do tipo de item, usado em relatorios e mensagens. */
 std::string nomeDoTipo(TipoItem tipo);
 
 /** @brief Item generico com nome e preco de compra. */
@@ -30,11 +31,16 @@ public:
     Item(const std::string& nome, int preco);
     virtual ~Item();
 
+    /** @brief Nome do item. */
     const std::string& nome() const;
+    /** @brief Preco de compra do item. */
     int preco() const;
 
+    /** @brief Tipo concreto do item (arma, armadura ou pocao). */
     virtual TipoItem tipo() const = 0;
+    /** @brief Descricao textual do item para exibicao. */
     virtual std::string descricao() const = 0;
+    /** @brief Cria uma copia independente deste item. */
     virtual std::shared_ptr<Item> clonar() const = 0;
 
     /** @brief Linha no formato dos arquivos de dados. */
@@ -54,6 +60,7 @@ public:
     /** @throws EntradaInvalida se o bonus for negativo. */
     Arma(const std::string& nome, int preco, int bonusAtaque);
 
+    /** @brief Bonus de ataque concedido pela arma. */
     int bonusAtaque() const;
     TipoItem tipo() const override;
     std::string descricao() const override;
@@ -71,6 +78,7 @@ public:
     /** @throws EntradaInvalida se o bonus for negativo. */
     Armadura(const std::string& nome, int preco, int bonusDefesa);
 
+    /** @brief Bonus de defesa concedido pela armadura. */
     int bonusDefesa() const;
     TipoItem tipo() const override;
     std::string descricao() const override;
@@ -85,6 +93,7 @@ private:
 
 enum class EfeitoPocao { VIDA, MANA };
 
+/** @brief Nome legivel do efeito da pocao, usado em relatorios e mensagens. */
 std::string nomeDoEfeito(EfeitoPocao efeito);
 
 /** @brief Consumivel que recupera vida ou mana. */
@@ -94,7 +103,9 @@ public:
     Pocao(const std::string& nome, int preco, EfeitoPocao efeito,
           int quantidade);
 
+    /** @brief Efeito que a pocao aplica ao ser usada (vida ou mana). */
     EfeitoPocao efeito() const;
+    /** @brief Quantidade de vida ou mana recuperada ao usar a pocao. */
     int quantidade() const;
 
     /**
@@ -122,8 +133,8 @@ private:
 std::shared_ptr<Item> criarItem(const std::vector<std::string>& campos);
 
 /** @brief Divide a linha em ';' e chama criarItem. */
-std::shared_ptr<Item> criarItemDeLinha(const std::string& linha);
+std::shared_ptr<Item> criarItemDaLinha(const std::string& linha);
 
-}  // namespace rpg
+} // namespace rpg
 
-#endif  // RPG_ITEM_HPP
+#endif // RPG_ITEM_HPP
