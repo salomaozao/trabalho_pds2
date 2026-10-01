@@ -1,0 +1,42 @@
+# =============================================================================
+#  Configuracao do Doxygen - PDS II - Projeto Final - RPG por Turnos
+#  Gere a documentacao com: make docs
+#  A saida fica em docs/html/index.html
+# =============================================================================
+
+PROJECT_NAME           = "RPG por Turnos - PDS II"
+PROJECT_BRIEF          = "Motor simplificado de RPG por turnos em C++11"
+PROJECT_NUMBER         = 0.1.0
+
+OUTPUT_DIRECTORY       = docs
+OUTPUT_LANGUAGE        = Brazilian
+CREATE_SUBDIRS         = NO
+
+INPUT                  = include src design/arquitetura.md README.md
+FILE_PATTERNS          = *.hpp *.cpp *.md
+RECURSIVE              = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Documentar tudo, inclusive membros privados, ajuda na revisao entre o grupo.
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+# Avisos ajudam a encontrar metodos publicos sem comentario Doxygen.
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_NO_PARAMDOC       = YES
+
+JAVADOC_AUTOBRIEF      = YES
+OPTIMIZE_OUTPUT_FOR_C  = NO
+BUILTIN_STL_SUPPORT    = YES
+SORT_MEMBER_DOCS       = YES
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_TREEVIEW      = YES
+GENERATE_LATEX         = NO
+
+HAVE_DOT               = NO
