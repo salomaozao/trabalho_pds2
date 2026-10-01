@@ -17,14 +17,16 @@ class Item;
 
 class Loja {
 public:
+    /** @brief Cria uma loja que vende os itens do catalogo informado. */
     explicit Loja(const CatalogoItens& catalogo);
 
+    /** @brief Catalogo de itens disponiveis para venda nesta loja. */
     const CatalogoItens& catalogo() const;
 
     /**
      * @brief Cobra o preco e coloca uma copia do item no inventario.
-     * @throws ItemNaoEncontrado   se o item nao existir no catalogo.
-     * @throws InventarioCheio     se nao houver espaco.
+     * @throws ItemNaoEncontrado  se o item nao existir no catalogo.
+     * @throws InventarioCheio    se nao houver espaco.
      * @throws RecursoInsuficiente se faltar ouro.
      */
     std::shared_ptr<Item> comprar(Heroi& heroi, const std::string& nome);
@@ -36,12 +38,13 @@ public:
      */
     int vender(Heroi& heroi, const std::string& nome);
 
+    /** @brief Calcula o preco de venda de um item (metade do preco de compra). */
     static int precoDeVenda(const Item& item);
 
 private:
     const CatalogoItens& catalogo_;
 };
 
-}  // namespace rpg
+} // namespace rpg
 
-#endif  // RPG_LOJA_HPP
+#endif // RPG_LOJA_HPP
