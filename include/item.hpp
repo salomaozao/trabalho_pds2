@@ -133,7 +133,7 @@ private:
 std::shared_ptr<Item> criarItem(const std::vector<std::string>& campos);
 
 /** @brief Divide a linha em ';' e chama criarItem. */
-std::shared_ptr<Item> criarItemDaLinha(const std::string& linha);
+std::shared_ptr<Item> criarItemDeLinha(const std::string& linha);
 
 } // namespace rpg
 
