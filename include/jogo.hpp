@@ -24,6 +24,7 @@ class RepositorioSaves;
 
 class Jogo {
 public:
+    /** @brief Monta o jogo com os fluxos de entrada/saida e os catalogos informados. */
     Jogo(std::istream& entrada, std::ostream& saida, const Dado& dado,
          const CatalogoItens& itens, const CatalogoMonstros& monstros,
          RepositorioSaves& saves);
@@ -32,6 +33,7 @@ public:
     /** @brief Roda ate o jogador sair ou a entrada acabar. */
     void executar();
 
+    /** @brief Heroi atualmente carregado, ou nulo se nenhum foi criado/carregado. */
     const Heroi* heroi() const;
 
 private:
@@ -62,6 +64,6 @@ private:
     bool encerrado_;
 };
 
-}  // namespace rpg
+} // namespace rpg
 
-#endif  // RPG_JOGO_HPP
+#endif // RPG_JOGO_HPP
