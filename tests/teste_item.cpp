@@ -73,3 +73,17 @@ TEST_CASE("criarItemDeLinha rejeita linhas malformadas") {
     CHECK_THROWS_AS(criarItemDeLinha("POCAO;Cura;25;VIDA"), EntradaInvalida);
     CHECK_THROWS_AS(criarItemDeLinha("POCAO;Cura;25;FORCA;30"), EntradaInvalida);
 }
+
+
+TEST_CASE("getters de bonus, efeito e quantidade") {
+    Arma arma("Lanca", 40, 6);
+    CHECK(arma.bonusAtaque() == 6);
+    CHECK(arma.preco() == 40);
+
+    Armadura armadura("Escudo", 35, 4);
+    CHECK(armadura.bonusDefesa() == 4);
+
+    Pocao pocao("Elixir", 25, EfeitoPocao::VIDA, 15);
+    CHECK(pocao.efeito() == EfeitoPocao::VIDA);
+    CHECK(pocao.quantidade() == 15);
+}
