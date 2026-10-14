@@ -28,7 +28,3 @@ data/saves/*
 *.swp
 Thumbs.db
 .DS_Store
-
-# Notas locais
-CLAUDE.md
-.claude/
