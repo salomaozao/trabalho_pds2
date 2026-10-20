@@ -125,6 +125,22 @@ TEST_CASE("inventario equipa, desequipa e usa pocao") {
     CHECK(contem(saida, "[!] Item nao encontrado: Nada"));
 }
 
+TEST_CASE("desequipar armadura pelo menu devolve ao inventario") {
+    DadoFixo dado(1);
+    std::string saida = jogar(
+        "1\nConan\n1\n"
+        "3\n1\nTunica\n3\n"
+        "2\n1\nTunica\n3\n5\n"
+        "7\n3\n",
+        ratos(), dado);
+    CHECK(contem(saida, "Comprou Tunica por 25 de ouro."));
+    CHECK(contem(saida, "Tunica equipado."));
+    CHECK(contem(saida, "Arma: nenhuma | Armadura: Tunica"));
+    CHECK(contem(saida, "Armadura guardada no inventario."));
+    CHECK(contem(saida, "Arma: nenhuma | Armadura: nenhuma"));
+    CHECK(contem(saida, "Inventario (2/8)"));
+}
+
 TEST_CASE("batalha vencida da experiencia e mostra o resumo") {
     DadoFixo dado(6);
     std::string saida = jogar("1\nConan\n1\n4\n1\n1\n7\n3\n", ratos(), dado);
