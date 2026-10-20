@@ -158,3 +158,15 @@ TEST_CASE("remover um save mantem os outros no indice") {
     repo.remover("Conan");
     CHECK(repo.listar().empty());
 }
+
+TEST_CASE("ler rejeita save com mais itens que a capacidade do inventario") {
+    std::unique_ptr<Heroi> heroi = heroiCompleto();
+    std::stringstream fluxo;
+    RepositorioSaves::escrever(*heroi, fluxo);
+    int capacidade = static_cast<int>(heroi->inventario().capacidade());
+    REQUIRE(capacidade > 0);
+    for (int i = 0; i < capacidade; ++i) {
+        fluxo << "item;ARMA;Faca" << i << ";10;1\n";
+    }
+    CHECK_THROWS_AS(RepositorioSaves::ler(fluxo, "excesso"), ArquivoInvalido);
+}
