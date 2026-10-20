@@ -185,6 +185,23 @@ TEST_CASE("descansar cobra ouro e restaura os recursos") {
     CHECK(contem(saida, "Descansou por 5 de ouro. Vida e mana restauradas."));
 }
 
+TEST_CASE("descansar sem ouro avisa e nao restaura") {
+    CatalogoMonstros monstros;
+    monstros.adicionar(
+        Monstro("Troll", 5, 90, 0, Atributos(15, 1, 2, 5), 110, 50));
+    DadoFixo dado(1);
+    std::string saida = jogar(
+        "1\nMerlin\n2\n"
+        "3\n1\nTunica\n1\nTunica\n3\n"
+        "4\n1\n1\n1\n1\n"
+        "5\n"
+        "7\n3\n",
+        monstros, dado);
+    CHECK(contem(saida, "[!] Falta ouro: sao necessarios 5 e existem apenas 0."));
+    CHECK(!contem(saida, "Descansou por 5 de ouro."));
+    CHECK(contem(saida, "Vida 17/35"));
+}
+
 TEST_CASE("salvar e carregar pelo menu") {
     DadoFixo dado(1);
     RepositorioSaves repo("build");
