@@ -140,3 +140,21 @@ TEST_CASE("repositorio em diretorio inexistente falha ao salvar") {
     CHECK_THROWS_AS(repo.salvar(heroi), ArquivoInvalido);
     CHECK(repo.listar().empty());
 }
+
+TEST_CASE("remover um save mantem os outros no indice") {
+    RepositorioSaves repo("build");
+    std::unique_ptr<Heroi> arqueiro = heroiCompleto();
+    Guerreiro guerreiro("Conan");
+    repo.salvar(*arqueiro);
+    repo.salvar(guerreiro);
+    REQUIRE(repo.listar().size() == 2);
+
+    repo.remover("Legolas");
+    CHECK_FALSE(repo.existe("Legolas"));
+    CHECK(repo.existe("Conan"));
+    REQUIRE(repo.listar().size() == 1);
+    CHECK(repo.listar()[0] == "Conan");
+    CHECK(repo.carregar("Conan")->nome() == "Conan");
+    repo.remover("Conan");
+    CHECK(repo.listar().empty());
+}
