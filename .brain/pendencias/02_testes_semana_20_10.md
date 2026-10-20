@@ -7,19 +7,23 @@ status: aberto
 responsavel: Salomão, Warley, Sabrina
 data_abertura: 2026-10-14
 prazo: 2026-10-23
+linear: PES-54
 ---
 
 # PEND-02: Testes da semana de 20/10
 
-Dois `TEST_CASE` por pessoa, um commit cada. São lacunas reais (conferidas contra os testes existentes em 14/10).
+Dois `TEST_CASE` por pessoa, um commit cada, cobrindo caminhos que nenhum teste exercitava (conferido pela cobertura em 14/10).
 
 | Quem | Arquivo | Comportamento |
 |---|---|---|
-| Salomão | `teste_batalha.cpp` | Executar rodada depois do fim da batalha é recusado |
-| Salomão | `teste_batalha.cpp` | O registro ganha uma linha por ação da rodada |
-| Warley | `teste_heroi.cpp` | Desequipar devolve o item ao inventário |
-| Warley | `teste_relatorio.cpp` | Estatísticas de herói sem nenhuma batalha |
-| Sabrina | `teste_persistencia.cpp` | Salvar duas vezes o mesmo herói sobrescreve o save |
-| Sabrina | `teste_item.cpp` | Trocar o teste de getters por um teste de comportamento |
+| Salomão | `teste_jogo.cpp` | Desequipar armadura pelo menu devolve ao inventário |
+| Salomão | `teste_jogo.cpp` | Descansar sem ouro avisa e não restaura |
+| Warley | `teste_heroi.cpp` | Trocar de armadura devolve a anterior ao inventário |
+| Warley | `teste_heroi.cpp` | `restaurarEstado` ajusta máximos menores e recusa mana acima do máximo |
+| Sabrina | `teste_persistencia.cpp` | Remover um save mantém os outros no índice |
+| Sabrina | `teste_persistencia.cpp` | Save com mais itens que a capacidade é recusado |
 
-Antes de escrever, confira o comportamento real no `.cpp`; se ele não existir, o teste vira a especificação e a implementação entra no C08.
+## Status dos Integrantes
+- [x] Salomão: concluído em 20/10 (commits b6804d2 e 60692a8)
+- [x] Sabrina: concluído em 20/10 (commits 5a3ea30 e 2207ed6)
+- [ ] Warley: pendente

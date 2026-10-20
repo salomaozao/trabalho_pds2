@@ -7,6 +7,7 @@ status: aberto
 responsavel: Salomão, Warley, Sabrina
 data_abertura: 2026-10-14
 prazo: 2026-11-03
+linear: PES-53
 ---
 
 # PEND-01: Participação mínima

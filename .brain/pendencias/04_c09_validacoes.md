@@ -7,14 +7,15 @@ status: aberto
 responsavel: Salomão, Warley, Sabrina
 data_abertura: 2026-10-14
 prazo: 2026-11-03
+linear: PES-56
 ---
 
 # PEND-04: C09 (ter 03/11, 23:59)
 
-Lançar a exceção certa de `excecoes.hpp`, tratar no menu sem o jogo fechar e provar com `CHECK_THROWS_AS`. Dois commits por pessoa: validação e teste.
+Dois commits por pessoa: validação e teste.
 
-| Quem | Onde procurar entrada sem validação |
+| Quem | Validação |
 |---|---|
-| Salomão | Opção inválida nos menus de `jogo.cpp`; ação de combate com parâmetro vazio |
-| Warley | Atributos negativos ao criar herói ou monstro; nível fora da faixa |
-| Sabrina | Linha malformada em `itens.txt` ou no save; preço negativo; inventário cheio |
+| Salomão | Descansar com vida e mana cheias é recusado (`AcaoInvalida`) e não cobra ouro |
+| Warley | `restaurarEstado` recusa experiência maior ou igual à necessária para o próximo nível |
+| Sabrina | `itens.txt`/`monstros.txt` sem nenhum cadastro geram `ArquivoInvalido` ao carregar |

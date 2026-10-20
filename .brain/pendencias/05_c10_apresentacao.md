@@ -7,6 +7,7 @@ status: aberto
 responsavel: Salomão, Warley, Sabrina
 data_abertura: 2026-10-14
 prazo: 2026-11-10
+linear: PES-57
 ---
 
 # PEND-05: C10 (10/11 ou 12/11; data a confirmar)

@@ -7,16 +7,17 @@ status: aberto
 responsavel: Salomão, Warley, Sabrina
 data_abertura: 2026-10-14
 prazo: 2026-10-27
+linear: PES-55
 ---
 
 # PEND-03: C08 (ter 27/10, 23:59)
 
-Cada um escolhe uma ideia no seu módulo e faz 2 commits: código e teste. Depois, `make coverage` uma vez (mínimo 60%).
+Cada um faz 2 commits: código e teste.
 
-| Quem | Ideias (escolha uma) |
+| Quem | Funcionalidade |
 |---|---|
-| Salomão | Golpe crítico na rolagem máxima do dado; ou monstro "chefe" a cada 5 níveis |
-| Warley | Quarta classe de herói; ou histórico das últimas batalhas no relatório |
-| Sabrina | Amuleto (item com bônus); ou listar saves com nível no menu de carregar |
+| Salomão | Bestiário: opção 8 do menu principal lista os monstros até o nível do herói + 1 |
+| Warley | Classe Paladino (força; Luz Sagrada = ataque + inteligência + d8, 12 de mana) |
+| Sabrina | Desconto na loja: 5% por nível acima do 1, até 25% (`Loja::precoDeCompra`) |
 
-Salomão faz mais um commit real em 30/10 (margem de participação).
+Salomão faz mais um commit em 30/10: a batalha recusa poção sem nome antes de começar a rodada.

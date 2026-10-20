@@ -7,6 +7,7 @@ status: aberto
 responsavel: Salomão
 data_abertura: 2026-10-14
 prazo: 2026-10-20
+linear: PES-58
 ---
 
 # PEND-06: Perguntas ao monitor
