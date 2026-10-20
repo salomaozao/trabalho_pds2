@@ -17,23 +17,19 @@ linear: PES-58
 3. C03 e C04, entregues em 15/09, foram aceitos?
 4. Data da apresentação do grupo: 10/11 ou 12/11?
 
-## Mensagem Pronta para Envio (Opção 1 - E-mail dos commits)
+## Mensagem Pronta para Envio (Opção 2 - Completa)
 > **Status:** Aguardando retorno do Moodle para envio por Gabriel Salomão.
 >
-> **Assunto:** PDS II - Dúvida sobre e-mail de commits na participação individual (Grupo RPG por turnos)
+> **Assunto:** PDS II - Dúvidas sobre commits, composição do grupo e C10 (Grupo RPG por turnos)
 >
-> Olá, [Nome do Monitor ou "pessoal da monitoria"], tudo bem?
+> Olá, [Nome do Monitor / Professor], tudo bem?
 >
-> Gostaria de tirar uma dúvida rápida sobre o script de verificação de participação individual (`scripts/stats.sh`).
+> Estou entrando em contato em nome do nosso grupo do Trabalho Prático (RPG por turnos) para tirar algumas dúvidas pontuais:
 >
-> No início do projeto (em setembro e início de outubro), realizei alguns commits com meu Git configurado com meu e-mail pessoal (`salomao.bertolucci@gmail.com`). Recentemente atualizei a configuração local para o meu e-mail institucional da UFMG cadastrado no Moodle (`gabrielbertolucci@ufmg.br`), pelo qual venho fazendo todos os commits mais recentes. Ambas as contas pertencem ao mesmo usuário no GitHub (`salomaozao`).
+> 1. **E-mail dos commits na apuração individual:** No início do projeto, fiz alguns commits utilizando meu e-mail pessoal (`salomao.bertolucci@gmail.com`), mas já configurei localmente para o e-mail da UFMG (`gabrielbertolucci@ufmg.br`), pelo qual venho fazendo todos os commits mais recentes. O script automático aceita esses commits antigos ou a apuração é feita estritamente pelo e-mail do Moodle? O uso de um arquivo `.mailmap` no repositório seria reconhecido pela correção?
+> 2. **Composição do grupo:** Tivemos a saída de dois integrantes (André e Sidney). O grupo segue ativamente com 3 integrantes (**Gabriel Salomão, Gabriel Warley e Sabrina Vitória**), e redistribuímos os módulos entre nós três. Precisamos registrar essa nova composição em algum formulário específico do Moodle?
+> 3. **Apresentação final (C10):** Já temos a definição se a nossa data de apresentação será em 10/11 ou 12/11?
 >
-> Gostaria de confirmar:
-> 1. O script de apuração da disciplina filtra estritamente pelo e-mail do Moodle ou há como considerar os commits feitos pelo e-mail secundário/pessoal associado ao mesmo autor no GitHub?
-> 2. Caso o script filtre estritamente pelo institucional, o uso de um arquivo `.mailmap` no repositório mapeando o e-mail pessoal para o institucional é aceito pela correção automática?
->
-> Já estou me planejando para bater todos os mínimos exigidos usando exclusivamente o e-mail institucional daqui até o final do semestre, mas gostaria de confirmar para garantir que está tudo certo.
->
-> Muito obrigado pela ajuda!  
+> Muito obrigado pela atenção e pelo suporte!  
 > **Gabriel Salomão Bertolucci**  
 > Repositório: https://github.com/salomaozao/trabalho_pds2
