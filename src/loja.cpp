@@ -15,7 +15,7 @@ std::shared_ptr<Item> Loja::comprar(Heroi& heroi, const std::string& nome) {
     if (heroi.inventario().cheio()) {
         throw InventarioCheio(heroi.inventario().capacidade());
     }
-    heroi.gastarOuro(item->preco());
+    heroi.gastarOuro(precoDeCompra(*item, heroi.nivel()));
     heroi.inventario().adicionar(item);
     return item;
 }
@@ -28,5 +28,16 @@ int Loja::vender(Heroi& heroi, const std::string& nome) {
 }
 
 int Loja::precoDeVenda(const Item& item) { return item.preco() / 2; }
+
+int Loja::precoDeCompra(const Item& item, int nivel) {
+    int desconto = (nivel - 1) * 5;
+    if (desconto > 25) {
+        desconto = 25;
+    }
+    if (desconto < 0) {
+        desconto = 0;
+    }
+    return item.preco() * (100 - desconto) / 100;
+}
 
 }  // namespace rpg
