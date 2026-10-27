@@ -24,7 +24,7 @@ public:
     const CatalogoItens& catalogo() const;
 
     /**
-     * @brief Cobra o preco e coloca uma copia do item no inventario.
+     * @brief Cobra o preco com desconto por nivel e coloca uma copia do item no inventario.
      * @throws ItemNaoEncontrado  se o item nao existir no catalogo.
      * @throws InventarioCheio    se nao houver espaco.
      * @throws RecursoInsuficiente se faltar ouro.
@@ -40,6 +40,9 @@ public:
 
     /** @brief Calcula o preco de venda de um item (metade do preco de compra). */
     static int precoDeVenda(const Item& item);
+
+    /** @brief Preco de compra com desconto de 5% por nivel acima do 1, ate 25%. */
+    static int precoDeCompra(const Item& item, int nivel);
 
 private:
     const CatalogoItens& catalogo_;
