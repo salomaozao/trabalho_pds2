@@ -62,3 +62,26 @@ TEST_CASE("vender paga metade do preco e tira o item do inventario") {
     CHECK(heroi.inventario().vazio());
     CHECK_THROWS_AS(loja.vender(heroi, "Espada"), ItemNaoEncontrado);
 }
+
+TEST_CASE("preco de compra tem 5% de desconto por nivel ate o teto de 25%") {
+    Arma espada("Espada", 60, 4);
+    CHECK(Loja::precoDeCompra(espada, 1) == 60);
+    CHECK(Loja::precoDeCompra(espada, 2) == 57);
+    CHECK(Loja::precoDeCompra(espada, 3) == 54);
+    CHECK(Loja::precoDeCompra(espada, 6) == 45);
+    CHECK(Loja::precoDeCompra(espada, 20) == 45);
+}
+
+TEST_CASE("comprar cobra o preco com desconto do nivel do heroi") {
+    CatalogoItens catalogo = catalogoDeTeste();
+    Loja loja(catalogo);
+    Guerreiro heroi("Conan");
+    while (heroi.nivel() < 3) {
+        heroi.ganharExperiencia(100);
+    }
+    heroi.ganharOuro(100);
+
+    std::shared_ptr<Item> item = loja.comprar(heroi, "espada");
+    CHECK(heroi.ouro() == 100 - Loja::precoDeCompra(*item, heroi.nivel()));
+    CHECK(heroi.ouro() > 40);
+}
